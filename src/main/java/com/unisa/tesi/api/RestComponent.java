@@ -80,6 +80,9 @@ public class RestComponent {
     }
 
 
+
+
+
     private User findByUid(String uid) {
         ArrayList<User> lista = gym.getTotalList();
         for(User user : lista){
