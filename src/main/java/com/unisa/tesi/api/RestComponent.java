@@ -6,10 +6,7 @@ import com.google.gson.GsonBuilder;
 import com.mashape.unirest.http.Unirest;
 import com.unisa.tesi.Application;
 
-import com.unisa.tesi.model.Gym;
-import com.unisa.tesi.model.Power;
-import com.unisa.tesi.model.Read;
-import com.unisa.tesi.model.User;
+import com.unisa.tesi.model.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -80,7 +77,13 @@ public class RestComponent {
     }
 
 
-
+    @GetMapping("/api/camera")
+    @ResponseBody
+    public String fromCamera(@RequestParam String area, int value){
+        System.out.println("---AREA : " + area + " ----NUMBER : " + value);
+        Camera camera = new Camera(area, value);
+        return camera.toString();
+    }
 
 
     private User findByUid(String uid) {
