@@ -2,9 +2,12 @@ package com.unisa.tesi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
+@Document
 @Data
 public class User {
 
@@ -14,6 +17,7 @@ public class User {
     private boolean inside;
 
 
+//    @Id
     private String uid;
 
     @JsonCreator

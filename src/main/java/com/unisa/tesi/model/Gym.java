@@ -2,7 +2,10 @@ package com.unisa.tesi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.lang.annotation.Documented;
 import java.util.ArrayList;
 
 @Data
@@ -29,6 +32,11 @@ public class Gym {
 
     @JsonCreator
     public Gym(){}
+
+
+    public String toString(){
+        return "NOME : " + this.name + "\nUtenti : "+ this.totalList.size();
+    }
 
 
 
