@@ -1,9 +1,15 @@
 package com.unisa.tesi.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document(collection = "power")
 public class Power {
+
+    @Id
+    private long timeStamp;
 
 
     private int voltage;
@@ -14,6 +20,7 @@ public class Power {
         this.voltage = voltage;
         this.current = current;
         this.power = power;
+        this.timeStamp = System.currentTimeMillis();
     }
 
     public Power(){}

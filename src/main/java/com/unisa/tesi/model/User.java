@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
-@Document
 @Data
+@Document(collection = "listu")
 public class User {
 
     private String name;
@@ -17,7 +17,7 @@ public class User {
     private boolean inside;
 
 
-//    @Id
+    @Id
     private String uid;
 
     @JsonCreator
