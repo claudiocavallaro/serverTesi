@@ -97,9 +97,9 @@ public class RestComponent {
 
     @GetMapping("/api/camera")
     @ResponseBody
-    public String fromCamera(@RequestParam String area, int value){
-        System.out.println("---AREA : " + area + " ----NUMBER : " + value);
-        Camera camera = new Camera(area, value);
+    public String fromCamera(@RequestParam String area, String number){
+        System.out.println("---AREA : " + area + " ----NUMBER : " + number);
+        Camera camera = new Camera(area, Integer.valueOf(number));
 
         //SAVE ON DB
         this.cameraRepo.save(camera);
