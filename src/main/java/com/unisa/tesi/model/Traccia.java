@@ -2,6 +2,8 @@ package com.unisa.tesi.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -14,14 +16,20 @@ public class Traccia {
     private String name;
     private String artist;
 
-    private String duration;
+    private float duration;
     private String loudness;
-    private String speechiness;
-    private String danceability;
+    private float speechiness;
+    private float danceability;
 
     private String url;
 
+    private float energy;
+
 
     public Traccia(){}
+
+    public String toString(){
+        return "--- PLAYING :" + name + " --- " + artist + " ---- " + this.energy;
+    }
 
 }
