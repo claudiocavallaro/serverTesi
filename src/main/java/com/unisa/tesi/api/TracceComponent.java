@@ -44,7 +44,7 @@ public class TracceComponent implements DisposableBean, Runnable{
             Collections.sort(listaTracce, new Comparator<Traccia>() {
                 @Override
                 public int compare(Traccia o1, Traccia o2) {
-                    return Float.compare(o2.getEnergy(), o1.getEnergy());
+                    return Float.compare(o2.getSpeechiness(), o1.getSpeechiness());
                 }
             });
 

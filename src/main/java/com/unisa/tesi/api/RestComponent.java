@@ -18,12 +18,14 @@ public class RestComponent {
     private CameraRepo cameraRepo;
     private PowerRepo powerRepo;
     private TracciaRepo tracciaRepo;
+    private PreferenceRepo preferenceRepo;
 
-    public RestComponent(UserRepo userRepo, CameraRepo cameraRepo, PowerRepo powerRepo, TracciaRepo tracciaRepo){
+    public RestComponent(UserRepo userRepo, CameraRepo cameraRepo, PowerRepo powerRepo, TracciaRepo tracciaRepo, PreferenceRepo preferenceRepo){
         this.userRepo = userRepo;
         this.cameraRepo = cameraRepo;
         this.powerRepo = powerRepo;
         this.tracciaRepo = tracciaRepo;
+        this.preferenceRepo = preferenceRepo;
     }
 
 
@@ -47,6 +49,8 @@ public class RestComponent {
             Preference p = new Preference(user, t, preferenza);
 
             System.out.println(p);
+
+            preferenceRepo.save(p);
         }
         
     }
