@@ -15,6 +15,8 @@ import java.util.List;
 @Component
 public class TracceComponent implements DisposableBean, Runnable{
 
+    private static Traccia traccia;
+
     private TracciaRepo tracciaRepo;
     private Thread thread;
     private volatile boolean flag = true;
@@ -25,6 +27,13 @@ public class TracceComponent implements DisposableBean, Runnable{
         this.thread.start();
     }
 
+    public static Traccia getTraccia() {
+        return traccia;
+    }
+
+    public static void setTraccia(Traccia traccia) {
+        TracceComponent.traccia = traccia;
+    }
 
     @Override
     public void run() {
@@ -42,6 +51,7 @@ public class TracceComponent implements DisposableBean, Runnable{
             for (Traccia t : listaTracce){
                 System.out.println(t.toString());
 
+                traccia = t;
                 double second = Double.valueOf(t.getDuration());
                 int intPart = (int) second;
                 intPart = intPart+1;

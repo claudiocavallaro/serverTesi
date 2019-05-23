@@ -37,8 +37,17 @@ public class RestComponent {
 
     @GetMapping("/api/preference")
     @ResponseBody
-    public void setPreference(@RequestParam String uid, String idTraccia, int preferenza){
+    public void setPreference(@RequestParam String uid, int preferenza){
 
+        User user = findByUid(uid);
+
+        if (user != null && user.isInside()){
+            Traccia t = TracceComponent.getTraccia();
+
+            Preference p = new Preference(user, t, preferenza);
+
+            System.out.println(p);
+        }
         
     }
 
