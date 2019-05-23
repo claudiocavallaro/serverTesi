@@ -35,6 +35,13 @@ public class RestComponent {
         return result;
     }
 
+    @GetMapping("/api/preference")
+    @ResponseBody
+    public void setPreference(@RequestParam String uid, String idTraccia, int preferenza){
+
+        
+    }
+
     @GetMapping("/api/entrance")
     @ResponseBody
     public String getUID(@RequestParam String uid){
