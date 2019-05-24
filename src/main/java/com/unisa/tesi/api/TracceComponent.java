@@ -41,13 +41,6 @@ public class TracceComponent implements DisposableBean, Runnable{
 
             List<Traccia> listaTracce = tracciaRepo.findAll();
 
-            Collections.sort(listaTracce, new Comparator<Traccia>() {
-                @Override
-                public int compare(Traccia o1, Traccia o2) {
-                    return Float.compare(o2.getSpeechiness(), o1.getSpeechiness());
-                }
-            });
-
             for (Traccia t : listaTracce){
                 System.out.println(t.toString());
 
@@ -66,8 +59,8 @@ public class TracceComponent implements DisposableBean, Runnable{
                 }
 
                 try{
-                    Thread.sleep(intPart*1000);
-                    Thread.sleep(1000);
+                    //Thread.sleep(intPart*1000);
+                    Thread.sleep(10000);
                 }catch (Exception e){
                     e.printStackTrace();
                 }

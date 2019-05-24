@@ -1,5 +1,6 @@
 package com.unisa.tesi.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,7 +15,8 @@ public class Read {
     private String uid;
 
 
-
+    @JsonCreator
+    public Read(){}
 
     public Read(String uid){
         this.uid = uid;

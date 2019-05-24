@@ -1,5 +1,6 @@
 package com.unisa.tesi.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
@@ -25,7 +26,7 @@ public class Traccia {
 
     private float energy;
 
-
+    @JsonCreator
     public Traccia(){}
 
     public String toString(){

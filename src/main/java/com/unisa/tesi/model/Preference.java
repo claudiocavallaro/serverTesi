@@ -1,5 +1,6 @@
 package com.unisa.tesi.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.unisa.tesi.api.TracceComponent;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -23,8 +24,11 @@ public class Preference {
         this.timestamp = System.currentTimeMillis();
     }
 
+    @JsonCreator
+    public Preference(){}
 
     public String toString(){
-        return traccia.getName() + " ---- " + user.getUid() + " ----- " + preferenza;
+
+        return "PREFERENZA " + traccia.getName() + " ---- DA : " + user.getUid() + " ----- VALORE : " + preferenza;
     }
 }

@@ -28,7 +28,7 @@ public class RestComponent {
         this.preferenceRepo = preferenceRepo;
     }
 
-
+    // ------------ DB TOTAL LIST ----------------------
     @RequestMapping(value = "/total", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String get(){
         Gson gson = new GsonBuilder().create();
@@ -37,24 +37,41 @@ public class RestComponent {
         return result;
     }
 
+    @GetMapping("/total/preference")
+    @ResponseBody
+    public String getPreference(){
+        Gson gson = new GsonBuilder().create();
+
+        List<Preference> listaPreferenze = preferenceRepo.findAll();
+
+        return gson.toJson(listaPreferenze);
+    }
+    //-------------------------------------------------
+
     @GetMapping("/api/preference")
     @ResponseBody
-    public void setPreference(@RequestParam String uid, int preferenza){
-
+    public String setPreference(@RequestParam String uid, int preferenza){
+        Gson gson = new GsonBuilder().create();
         User user = findByUid(uid);
+
+        Preference p = null;
 
         if (user != null && user.isInside()){
             Traccia t = TracceComponent.getTraccia();
 
-            Preference p = new Preference(user, t, preferenza);
-
-            System.out.println(p);
+            p = new Preference(user, t, preferenza);
 
             preferenceRepo.save(p);
         }
-        
+
+        if (p != null){
+            return gson.toJson(p);
+        } else {
+            return null;
+        }
     }
 
+    //---- SET ENTRANCE ---------
     @GetMapping("/api/entrance")
     @ResponseBody
     public String getUID(@RequestParam String uid){
@@ -101,32 +118,35 @@ public class RestComponent {
         return result;
     }
 
-
+    // -------- SENSOR DATA ---------
     @GetMapping("/api/power")
     @ResponseBody
     public String getPower(@RequestParam String voltage, String current, String power){
+        Gson gson = new GsonBuilder().create();
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
         //SAVE ON DB
         this.powerRepo.save(powerObj);
 
-        return powerObj.toString();
+        return gson.toJson(powerObj);
     }
 
 
     @GetMapping("/api/camera")
     @ResponseBody
     public String fromCamera(@RequestParam String area, String number){
+        Gson gson = new GsonBuilder().create();
         System.out.println("---AREA : " + area + " ----NUMBER : " + number);
         Camera camera = new Camera(area, Integer.valueOf(number));
 
         //SAVE ON DB
         this.cameraRepo.save(camera);
 
-        return camera.toString();
+        return gson.toJson(camera);
     }
 
+    //---------------------------------------------------------
 
     private User findByUid(String uid) {
         for(User user : userRepo.findAll()){

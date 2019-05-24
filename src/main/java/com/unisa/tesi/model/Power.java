@@ -1,5 +1,6 @@
 package com.unisa.tesi.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,6 +24,7 @@ public class Power {
         this.timeStamp = System.currentTimeMillis();
     }
 
+    @JsonCreator
     public Power(){}
 
     public String toString(){
