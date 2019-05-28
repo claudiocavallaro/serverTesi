@@ -9,10 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PreferenceRepo extends MongoRepository<Preference, Long> {
-
-
-    //Da aggiustare questa
-
-    @Query(value = "{user._id:?0}")
+    
+    @Query(value = "{ 'user._id' : ?0 }")
     List<Preference> findByUserId(String uid);
 }

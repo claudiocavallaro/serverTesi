@@ -48,29 +48,17 @@ public class RestComponent {
         return gson.toJson(listaPreferenze);
     }
     //-------------------------------------------------
-
-    // Qui posso fare porprio una query poi la vedo
+    //--------- PREFERENCE ----------------------------
     @GetMapping("/api/userpreference")
     @ResponseBody
     public String getUserPreference(@RequestParam String uid){
-        List<Preference> listaPreferenze = preferenceRepo.findAll();
-        List<Preference> listaPreferenzePerUser = new ArrayList<>();
-
-        User u = findByUid(uid);
-
-        if (u != null){
-            for (Preference p : listaPreferenze){
-                if (p.getUser().getUid().equals(uid)){
-                    listaPreferenzePerUser.add(p);
-                }
-            }
-        }
-        return listaPreferenzePerUser.toString();
-
-        /*List<Preference> listaPreferenzeUser = preferenceRepo.findByUserId(uid);
-
         Gson gson = new GsonBuilder().create();
-        return gson.toJson(listaPreferenzeUser);*/
+
+        System.out.println(uid);
+        List<Preference> listaPreferenzeUser = preferenceRepo.findByUserId(uid);
+
+        System.out.println(listaPreferenzeUser.size());
+        return gson.toJson(listaPreferenzeUser);
     }
 
     @GetMapping("/api/preference")
