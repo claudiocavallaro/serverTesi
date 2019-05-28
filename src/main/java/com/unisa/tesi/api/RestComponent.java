@@ -9,6 +9,7 @@ import com.unisa.tesi.model.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -47,6 +48,30 @@ public class RestComponent {
         return gson.toJson(listaPreferenze);
     }
     //-------------------------------------------------
+
+    // Qui posso fare porprio una query poi la vedo
+    @GetMapping("/api/userpreference")
+    @ResponseBody
+    public String getUserPreference(@RequestParam String uid){
+        List<Preference> listaPreferenze = preferenceRepo.findAll();
+        List<Preference> listaPreferenzePerUser = new ArrayList<>();
+
+        User u = findByUid(uid);
+
+        if (u != null){
+            for (Preference p : listaPreferenze){
+                if (p.getUser().getUid().equals(uid)){
+                    listaPreferenzePerUser.add(p);
+                }
+            }
+        }
+        return listaPreferenzePerUser.toString();
+
+        /*List<Preference> listaPreferenzeUser = preferenceRepo.findByUserId(uid);
+
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(listaPreferenzeUser);*/
+    }
 
     @GetMapping("/api/preference")
     @ResponseBody
@@ -155,6 +180,12 @@ public class RestComponent {
             }
         }
         return null;
+    }
+
+    @GetMapping("/api/nexttrack")
+    @ResponseBody
+    public void nextTrack(){
+        TracceComponent.setSleep(true);
     }
 
 

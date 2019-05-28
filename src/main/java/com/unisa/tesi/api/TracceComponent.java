@@ -21,10 +21,20 @@ public class TracceComponent implements DisposableBean, Runnable{
     private Thread thread;
     private volatile boolean flag = true;
 
+    private static boolean sleep = false;
+
     public TracceComponent(TracciaRepo tracciaRepo){
         this.thread = new Thread(this);
         this.tracciaRepo = tracciaRepo;
         this.thread.start();
+    }
+
+    public static boolean isSleep() {
+        return sleep;
+    }
+
+    public static void setSleep(boolean sleep) {
+        TracceComponent.sleep = sleep;
     }
 
     public static Traccia getTraccia() {
@@ -59,8 +69,12 @@ public class TracceComponent implements DisposableBean, Runnable{
                 }
 
                 try{
-                    //Thread.sleep(intPart*1000);
-                    Thread.sleep(10000);
+                    if(sleep == false){
+                        Thread.sleep(intPart*1000);
+                    } else {
+                        Thread.sleep(1);
+                        sleep = false;
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }
