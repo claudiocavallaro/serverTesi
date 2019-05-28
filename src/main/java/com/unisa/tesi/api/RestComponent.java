@@ -9,7 +9,6 @@ import com.unisa.tesi.model.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,7 +31,7 @@ public class RestComponent {
     // ------------ DB TOTAL LIST ----------------------
     @RequestMapping(value = "/total", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String get(){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<User> user = userRepo.findAll();
         String result = gson.toJson(user);
         return result;
@@ -41,7 +40,7 @@ public class RestComponent {
     @GetMapping("/total/preference")
     @ResponseBody
     public String getPreference(){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         List<Preference> listaPreferenze = preferenceRepo.findAll();
 
@@ -52,7 +51,7 @@ public class RestComponent {
     @GetMapping("/api/userpreference")
     @ResponseBody
     public String getUserPreference(@RequestParam String uid){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         System.out.println(uid);
         List<Preference> listaPreferenzeUser = preferenceRepo.findByUserId(uid);
@@ -64,7 +63,7 @@ public class RestComponent {
     @GetMapping("/api/preference")
     @ResponseBody
     public String setPreference(@RequestParam String uid, int preferenza){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         User user = findByUid(uid);
 
         Preference p = null;
@@ -125,7 +124,7 @@ public class RestComponent {
         userRepo.save(user);
         //-----------------
 
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         result = gson.toJson(user);
 
         return result;
@@ -135,7 +134,7 @@ public class RestComponent {
     @GetMapping("/api/power")
     @ResponseBody
     public String getPower(@RequestParam String voltage, String current, String power){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
@@ -149,7 +148,7 @@ public class RestComponent {
     @GetMapping("/api/camera")
     @ResponseBody
     public String fromCamera(@RequestParam String area, String number){
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         System.out.println("---AREA : " + area + " ----NUMBER : " + number);
         Camera camera = new Camera(area, Integer.valueOf(number));
 
