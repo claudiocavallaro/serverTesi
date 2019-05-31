@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Component
-public class TracceComponent implements DisposableBean, Runnable{
+public class TracceComponent implements DisposableBean, Runnable {
 
     private static Traccia traccia;
 
@@ -21,20 +21,11 @@ public class TracceComponent implements DisposableBean, Runnable{
     private Thread thread;
     private volatile boolean flag = true;
 
-    private static boolean sleep = false;
 
-    public TracceComponent(TracciaRepo tracciaRepo){
+    public TracceComponent(TracciaRepo tracciaRepo) {
         this.thread = new Thread(this);
         this.tracciaRepo = tracciaRepo;
         this.thread.start();
-    }
-
-    public static boolean isSleep() {
-        return sleep;
-    }
-
-    public static void setSleep(boolean sleep) {
-        TracceComponent.sleep = sleep;
     }
 
     public static Traccia getTraccia() {
@@ -47,36 +38,34 @@ public class TracceComponent implements DisposableBean, Runnable{
 
     @Override
     public void run() {
-        while(flag == true){
+        while (flag == true) {
 
             List<Traccia> listaTracce = tracciaRepo.findAll();
 
-            for (Traccia t : listaTracce){
+            Collections.shuffle(listaTracce);
+
+            for (Traccia t : listaTracce) {
                 System.out.println(t.toString());
 
                 traccia = t;
                 double second = Double.valueOf(t.getDuration());
                 int intPart = (int) second;
-                intPart = intPart+1;
 
-                String[] args = new String[] {"/bin/bash", "-c", "spotify play " + t.getUrl()};
+                String[] args = new String[]{"/bin/bash", "-c", "spotify play " + t.getUrl()};
 
                 try {
                     Process proc = new ProcessBuilder(args).start();
 
-                } catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-                try{
-                    if(sleep == false){
-                        Thread.sleep(intPart*1000);
-                    } else {
-                        Thread.sleep(1);
-                        sleep = false;
-                    }
-                }catch (Exception e){
-                    e.printStackTrace();
+                try {
+
+                    Thread.sleep(intPart * 1000);
+
+                } catch (InterruptedException e) {
+                    System.out.println("Receiving next track command");
                 }
 
             }
@@ -91,15 +80,10 @@ public class TracceComponent implements DisposableBean, Runnable{
     }
 
 
-
-
     @Override
     public void destroy() throws Exception {
-
+        thread.interrupt();
     }
-
-
-
 
 
 }

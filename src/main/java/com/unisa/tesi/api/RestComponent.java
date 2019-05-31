@@ -20,12 +20,17 @@ public class RestComponent {
     private TracciaRepo tracciaRepo;
     private PreferenceRepo preferenceRepo;
 
-    public RestComponent(UserRepo userRepo, CameraRepo cameraRepo, PowerRepo powerRepo, TracciaRepo tracciaRepo, PreferenceRepo preferenceRepo){
+    private TracceComponent tracceComponent;
+
+    public RestComponent(UserRepo userRepo, CameraRepo cameraRepo, PowerRepo powerRepo,
+                         TracciaRepo tracciaRepo, PreferenceRepo preferenceRepo,
+                         TracceComponent tracceComponent){
         this.userRepo = userRepo;
         this.cameraRepo = cameraRepo;
         this.powerRepo = powerRepo;
         this.tracciaRepo = tracciaRepo;
         this.preferenceRepo = preferenceRepo;
+        this.tracceComponent = tracceComponent;
     }
 
     // ------------ DB TOTAL LIST ----------------------
@@ -66,6 +71,15 @@ public class RestComponent {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         User user = findByUid(uid);
 
+        List<Camera> listCamera = cameraRepo.findAll();
+        List<Power> listPower = powerRepo.findAll();
+        Camera camera = null;
+        Power power = null;
+        if ((listCamera.size() > 0) && (listPower.size() > 0)){
+            camera = cameraRepo.findAll().get(cameraRepo.findAll().size()-1);
+            power = powerRepo.findAll().get(powerRepo.findAll().size()-1);
+        }
+
         Preference p = null;
 
         if (user != null && user.isInside()){
@@ -73,6 +87,8 @@ public class RestComponent {
 
             p = new Preference(user, t, preferenza);
 
+            p.setPower(power);
+            p.setCamera(camera);
             preferenceRepo.save(p);
         }
 
@@ -172,7 +188,11 @@ public class RestComponent {
     @GetMapping("/api/nexttrack")
     @ResponseBody
     public void nextTrack(){
-        TracceComponent.setSleep(true);
+        try {
+            tracceComponent.destroy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

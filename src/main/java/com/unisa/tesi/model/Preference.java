@@ -17,6 +17,9 @@ public class Preference {
 
     private int preferenza;
 
+    private Camera camera;
+    private Power power;
+
     public Preference(User user, Traccia traccia, int preferenza){
         this.user = user;
         this.traccia = traccia;
