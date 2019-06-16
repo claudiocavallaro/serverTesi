@@ -32,6 +32,6 @@ public class Preference {
 
     public String toString(){
 
-        return "PREFERENZA " + traccia.getName() + " ---- DA : " + user.getUid() + " ----- VALORE : " + preferenza;
+        return traccia.getName() + " ---- DA : " + user.getUid() + " ----- VALORE : " + preferenza + " ---- POTENZA : " + power.getPower() + " ----- CAMERA : " + camera.getNumber();
     }
 }

@@ -9,6 +9,7 @@ import com.unisa.tesi.model.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -51,6 +52,17 @@ public class RestComponent {
 
         return gson.toJson(listaPreferenze);
     }
+
+    @GetMapping("/total/power")
+    @ResponseBody
+    public String getPower(){
+        List<Power> listaPower = powerRepo.findAll();
+
+        for(Power power : listaPower){
+            System.out.println(power.toString());
+        }
+        return listaPower.toString();
+    }
     //-------------------------------------------------
     //--------- PREFERENCE ----------------------------
     @GetMapping("/api/userpreference")
@@ -58,10 +70,8 @@ public class RestComponent {
     public String getUserPreference(@RequestParam String uid){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        System.out.println(uid);
         List<Preference> listaPreferenzeUser = preferenceRepo.findByUserId(uid);
 
-        System.out.println(listaPreferenzeUser.size());
         return gson.toJson(listaPreferenzeUser);
     }
 
@@ -154,6 +164,11 @@ public class RestComponent {
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
+        //Power lastPeak = findPeak();
+        if (powerObj.isInUse() == true){
+
+        }
+
         //SAVE ON DB
         this.powerRepo.save(powerObj);
 
@@ -193,6 +208,25 @@ public class RestComponent {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public Power findPeak(){
+        List<Power> lista = this.powerRepo.findAll();
+        List<Power> appoggio = new ArrayList<>();
+        for(Power power : lista){
+            if (power.getPower() > 750){
+                appoggio.add(power);
+            }
+        }
+
+
+        if (appoggio.isEmpty() == true){
+            return null;
+        } else {
+            return  appoggio.get(appoggio.size() - 1);
+        }
+
     }
 
 
