@@ -20,18 +20,20 @@ public class RestComponent {
     private PowerRepo powerRepo;
     private TracciaRepo tracciaRepo;
     private PreferenceRepo preferenceRepo;
+    private PhonePrefRepo phonePrefRepo;
 
     private TracceComponent tracceComponent;
 
     public RestComponent(UserRepo userRepo, CameraRepo cameraRepo, PowerRepo powerRepo,
                          TracciaRepo tracciaRepo, PreferenceRepo preferenceRepo,
-                         TracceComponent tracceComponent){
+                         TracceComponent tracceComponent, PhonePrefRepo phonePrefRepo){
         this.userRepo = userRepo;
         this.cameraRepo = cameraRepo;
         this.powerRepo = powerRepo;
         this.tracciaRepo = tracciaRepo;
         this.preferenceRepo = preferenceRepo;
         this.tracceComponent = tracceComponent;
+        this.phonePrefRepo = phonePrefRepo;
     }
 
     // ------------ DB TOTAL LIST ----------------------
@@ -64,6 +66,22 @@ public class RestComponent {
         return listaPower.toString();
     }
     //-------------------------------------------------
+    //--------- PHONE PREFERENCE ----------------------
+
+    @GetMapping("api/phonepref")
+    @ResponseBody
+    public String setPhonePref(@RequestParam String id, String pref){
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        PhonePreference p = new PhonePreference(id, pref);
+
+        phonePrefRepo.save(p);
+
+        return gson.toJson(p);
+    }
+
+
     //--------- PREFERENCE ----------------------------
     @GetMapping("/api/userpreference")
     @ResponseBody
@@ -164,10 +182,6 @@ public class RestComponent {
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
-        //Power lastPeak = findPeak();
-        if (powerObj.isInUse() == true){
-
-        }
 
         //SAVE ON DB
         this.powerRepo.save(powerObj);
@@ -210,24 +224,6 @@ public class RestComponent {
         }
     }
 
-
-    public Power findPeak(){
-        List<Power> lista = this.powerRepo.findAll();
-        List<Power> appoggio = new ArrayList<>();
-        for(Power power : lista){
-            if (power.getPower() > 750){
-                appoggio.add(power);
-            }
-        }
-
-
-        if (appoggio.isEmpty() == true){
-            return null;
-        } else {
-            return  appoggio.get(appoggio.size() - 1);
-        }
-
-    }
 
 
 }

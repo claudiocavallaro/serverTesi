@@ -43,6 +43,11 @@ public class UserSeeder implements CommandLineRunner {
         User u10 = new User("nome10", "data10", 19, "24fd6601");
 
 
+        u1.setInside(true);
+
+        u2.setInside(true);
+
+        u3.setInside(true);
 
 
         this.userRepo.deleteAll();
