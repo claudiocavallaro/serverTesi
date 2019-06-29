@@ -36,6 +36,19 @@ public class RestComponent {
         this.phonePrefRepo = phonePrefRepo;
     }
 
+    //------------- API KEYS ---------------------------
+
+    @GetMapping("api/cell/phone/cdsgrrte/xxsgh/keys")
+    @ResponseBody
+    public String getKey(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        ApiKeys apiKeys = new ApiKeys();
+
+        System.out.println("--- REQUEST KEY PHONE ---");
+        return gson.toJson(apiKeys);
+    }
+
     // ------------ DB TOTAL LIST ----------------------
     @RequestMapping(value = "/total", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String get(){
@@ -58,12 +71,24 @@ public class RestComponent {
     @GetMapping("/total/power")
     @ResponseBody
     public String getPower(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<Power> listaPower = powerRepo.findAll();
 
         for(Power power : listaPower){
-            System.out.println(power.toString());
+            //System.out.println(power.toString());
         }
-        return listaPower.toString();
+        return gson.toJson(listaPower);
+    }
+
+    @GetMapping("/total/phonepref")
+    @ResponseBody
+    public String getTotalPhonePref(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        List<PhonePreference> listaPhone = phonePrefRepo.findAll();
+        for (PhonePreference phonePreference : listaPhone){
+            //System.out.println(phonePreference.toString());
+        }
+        return gson.toJson(listaPhone);
     }
     //-------------------------------------------------
     //--------- PHONE PREFERENCE ----------------------

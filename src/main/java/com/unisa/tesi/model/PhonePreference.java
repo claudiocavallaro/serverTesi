@@ -25,4 +25,9 @@ public class PhonePreference {
 
     @JsonCreator
     public PhonePreference(){}
+
+
+    public String toString(){
+        return "PhonePref --- ID : " + idSong + " Preference : " + preference + "\n";
+    }
 }
