@@ -93,13 +93,19 @@ public class RestComponent {
     //-------------------------------------------------
     //--------- PHONE PREFERENCE ----------------------
 
+    // Prova a casa la modifica per la potenza
+
     @GetMapping("api/phonepref")
     @ResponseBody
     public String setPhonePref(@RequestParam String id, String pref){
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        PhonePreference p = new PhonePreference(id, pref);
+        List<Power> list = powerRepo.findAll();
+
+        Power power = list.get(list.size()-1);
+
+        PhonePreference p = new PhonePreference(id, pref, power);
 
         phonePrefRepo.save(p);
 

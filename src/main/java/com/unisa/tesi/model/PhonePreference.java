@@ -9,6 +9,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "phone")
 public class PhonePreference {
 
+
+    /*
+    *       Devo provare ad inserire l'ultima misurazione di potenza fatta
+    * */
+
+
+    // POTENZA
+
+    private Power power;
+
     private String idSong;
     private String preference;
 
@@ -16,10 +26,10 @@ public class PhonePreference {
     private long timeStamp;
 
 
-    public PhonePreference(String idSong, String preference){
+    public PhonePreference(String idSong, String preference, Power power){
         this.idSong = idSong;
         this.preference = preference;
-
+        this.power = power;
         this.timeStamp = System.currentTimeMillis();
     }
 
