@@ -26,10 +26,9 @@ public class PhonePreference {
     private long timeStamp;
 
 
-    public PhonePreference(String idSong, String preference, Power power){
+    public PhonePreference(String idSong, String preference){
         this.idSong = idSong;
         this.preference = preference;
-        this.power = power;
         this.timeStamp = System.currentTimeMillis();
     }
 

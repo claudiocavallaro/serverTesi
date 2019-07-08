@@ -74,8 +74,8 @@ public class RestComponent {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<Power> listaPower = powerRepo.findAll();
 
-        for(Power power : listaPower){
-            //System.out.println(power.toString());
+        for (Power p : listaPower){
+            System.out.println(p.toString());
         }
         return gson.toJson(listaPower);
     }
@@ -85,15 +85,12 @@ public class RestComponent {
     public String getTotalPhonePref(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         List<PhonePreference> listaPhone = phonePrefRepo.findAll();
-        for (PhonePreference phonePreference : listaPhone){
-            //System.out.println(phonePreference.toString());
-        }
+
         return gson.toJson(listaPhone);
     }
     //-------------------------------------------------
     //--------- PHONE PREFERENCE ----------------------
 
-    // Prova a casa la modifica per la potenza
 
     @GetMapping("api/phonepref")
     @ResponseBody
@@ -101,15 +98,36 @@ public class RestComponent {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
+        System.out.println("PHONE PREF ID: " + id + " PREF " + pref);
         List<Power> list = powerRepo.findAll();
 
-        Power power = list.get(list.size()-1);
+        PhonePreference p = null;
 
-        PhonePreference p = new PhonePreference(id, pref, power);
+        if (list.size() > 0){
+            Power power = list.get(list.size()-1);
 
-        phonePrefRepo.save(p);
+            p = new PhonePreference(id, pref);
 
-        return gson.toJson(p);
+            long powerStamp = power.getTimeStamp();
+            long prefStamp = p.getTimeStamp();
+
+            long time = 60 * 60 * 1000;
+            if (Math.abs(prefStamp - powerStamp) > time){
+                //non setto power perchè troppo lontano
+                System.out.println("preferenza senza potenza associata");
+            } else {
+                p.setPower(power);
+            }
+
+            phonePrefRepo.save(p);
+
+            return gson.toJson(p);
+
+        } else {
+            return "Non posso salvare la preferenza";
+        }
+
+
     }
 
 

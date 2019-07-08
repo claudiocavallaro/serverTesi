@@ -33,7 +33,7 @@ public class Power {
     }*/
 
     public String toString(){
-        return this.power + "";
+        return  this.voltage + "," + this.current + "," + this.power ;
     }
 
 }
