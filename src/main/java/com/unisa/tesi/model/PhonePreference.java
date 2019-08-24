@@ -25,7 +25,6 @@ public class PhonePreference {
     @Id
     private long timeStamp;
 
-
     public PhonePreference(String idSong, String preference){
         this.idSong = idSong;
         this.preference = preference;
