@@ -9,12 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "phone")
 public class PhonePreference {
 
-
-    /*
-    *       Devo provare ad inserire l'ultima misurazione di potenza fatta
-    * */
-
-
     // POTENZA
 
     private Power power;

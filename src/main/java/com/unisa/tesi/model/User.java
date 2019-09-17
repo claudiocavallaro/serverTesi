@@ -16,13 +16,11 @@ public class User {
     private int ingressi;
     private boolean inside;
 
-
     @Id
     private String uid;
 
     @JsonCreator
     public User(){}
-
 
     public User(String name, String bornDate, int ingressi, String uid){
         this.name = name;

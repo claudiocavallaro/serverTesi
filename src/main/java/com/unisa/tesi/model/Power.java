@@ -12,7 +12,6 @@ public class Power {
     @Id
     private long timeStamp;
 
-
     private int voltage;
     private int power;
     private double current;
@@ -27,10 +26,6 @@ public class Power {
 
     @JsonCreator
     public Power(){}
-
-    /*public String toString(){
-        return " ---VOLTAGE : " + voltage + " ---CURRENT : " + current + " ---POWER : " + power;
-    }*/
 
     public String toString(){
         return  this.voltage + "," + this.current + "," + this.power ;

@@ -18,9 +18,12 @@ public class Traccia {
     private String artist;
 
     private float duration;
-    private String loudness;
+    private float loudness;
     private float speechiness;
     private float danceability;
+
+    private float tempo;
+    private float valence;
 
     private String url;
 
