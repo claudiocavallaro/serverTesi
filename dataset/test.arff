@@ -1,0 +1,6 @@
+@relation danceability
+@attribute POWER numeric
+@attribute CAR numeric
+
+@data
+300,?

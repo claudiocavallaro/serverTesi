@@ -9,7 +9,8 @@ import com.unisa.tesi.model.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.List;
 
 @RestController
@@ -231,9 +232,31 @@ public class RestComponent {
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
+        // Scelto una caratteristica
+
+        String car = "danceability";
+
+        //create test file
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("dataset/test.arff"));
+            writer.write("@relation "+ car + "\n@attribute POWER numeric\n@attribute CAR numeric\n\n@data\n");
+            writer.write(powerObj.getPower() + ",?");
+            writer.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         //SAVE ON DB
         this.powerRepo.save(powerObj);
+
+        //PERFORM ML
+
+        if (MachineLearning.isInPlay() != true){
+            MachineLearning machineLearning = new MachineLearning();
+            machineLearning.performML(powerObj, car);
+        }
+
+
 
         return gson.toJson(powerObj);
     }

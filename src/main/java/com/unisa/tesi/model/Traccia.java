@@ -12,22 +12,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Traccia {
 
     @Id
-    private String _id;
+    private String id;
 
     private String name;
     private String artist;
 
-    private float duration;
+    private int duration;
+    private float energy;
     private float loudness;
     private float speechiness;
     private float danceability;
-
     private float tempo;
     private float valence;
 
     private String url;
-
-    private float energy;
 
     @JsonCreator
     public Traccia(){}
