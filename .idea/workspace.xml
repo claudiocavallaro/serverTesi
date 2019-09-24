@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fc46a1-c3d5-44b0-9f06-7799f0c58438" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataset/danceability.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/energy.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/loudness.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/speechiness.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/tempo.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/test.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/valence.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/RestComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/RestComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/TracceComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/TracceComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Power.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Traccia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Traccia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/User.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -79,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
@@ -134,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="345">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -170,6 +149,7 @@
       <find>2.9.</find>
       <find>jackson-data</find>
       <find>preference</find>
+      <find>bind</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,13 +175,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Power.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/Ml.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -497,14 +477,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568756526775</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="...">
+      <created>1569334826273</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1569334826273</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49926144" visible="true" weight="0.26091588" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49926144" visible="true" weight="0.26091588" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -514,7 +501,7 @@
       <window_info id="Favorites" order="7" sideWeight="0.50073856" side_tool="true" weight="0.3221512" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -687,13 +674,6 @@
     <entry file="file://$PROJECT_DIR$/dataset/tempo.arff">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -775,6 +755,13 @@
             <element signature="e#683#684#0" expanded="true" />
             <element signature="e#730#731#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
