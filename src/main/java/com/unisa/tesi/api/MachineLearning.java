@@ -74,7 +74,6 @@ public class MachineLearning {
     private void playSong(Traccia traccia) {
         inPlay = true;
         String[] args = new String[]{"/bin/bash", "-c", "spotify play " + traccia.getUrl()};
-
         try {
             Process proc = new ProcessBuilder(args).start();
         } catch (Exception e) {

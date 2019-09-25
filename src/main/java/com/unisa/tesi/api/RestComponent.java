@@ -232,11 +232,9 @@ public class RestComponent {
         System.out.println("Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
-        // Scelto una caratteristica
-
+        //Si sceglie una caratteristica
         String car = "danceability";
-
-        //create test file
+        //Si crea il testset file
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("dataset/test.arff"));
             writer.write("@relation "+ car + "\n@attribute POWER numeric\n@attribute CAR numeric\n\n@data\n");
@@ -250,13 +248,10 @@ public class RestComponent {
         this.powerRepo.save(powerObj);
 
         //PERFORM ML
-
         if (MachineLearning.isInPlay() != true){
             MachineLearning machineLearning = new MachineLearning();
             machineLearning.performML(powerObj, car);
         }
-
-
 
         return gson.toJson(powerObj);
     }
