@@ -47,7 +47,7 @@ public class MachineLearning {
             eval.evaluateModel(rf, testSet);
 
             for (Prediction prediction : eval.predictions()){
-                findSong(prediction.predicted(), property);
+                findSongFromDb(prediction.predicted(), property);
             }
 
         } catch (Exception e){
@@ -71,6 +71,21 @@ public class MachineLearning {
         playSong(t);
     }
 
+    private void findSongFromDb(double predicted, String car) {
+        ArrayList<Traccia> lista = InitComponent.getMusicList();
+        double min = predicted - 0;
+        Traccia t = null;
+        for (Traccia traccia : lista){
+            float musicValue = traccia.getNumber(car);
+            double distance = Math.abs(musicValue - predicted);
+            if (distance < Math.abs(min)){
+                min = distance;
+                t = traccia;
+            }
+        }
+        playSong(t);
+    }
+
     private void playSong(Traccia traccia) {
         inPlay = true;
         String[] args = new String[]{"/bin/bash", "-c", "spotify play " + traccia.getUrl()};
@@ -81,7 +96,8 @@ public class MachineLearning {
         }
 
         try{
-            Thread.sleep(traccia.getDuration());
+            //Thread.sleep(traccia.getDuration());
+            Thread.sleep(10000);
             inPlay = false;
         } catch (Exception e){
             e.printStackTrace();

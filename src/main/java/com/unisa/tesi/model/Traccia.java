@@ -30,8 +30,33 @@ public class Traccia {
     @JsonCreator
     public Traccia(){}
 
+    public float getNumber(String car){
+        float myNumber = 0;
+        switch (car){
+            case "danceability":
+                myNumber = this.getDanceability();
+                break;
+            case "energy":
+                myNumber = this.getEnergy();
+                break;
+            case "loudness":
+                myNumber = this.getLoudness();
+                break;
+            case "speechiness":
+                myNumber = this.getSpeechiness();
+                break;
+            case "valence":
+                myNumber = this.getValence();
+                break;
+            case "tempo":
+                myNumber = this.getTempo();
+                break;
+        }
+        return myNumber;
+    }
+
     public String toString(){
-        return "--- PLAYING :" + name + " --- " + artist + " ---- " + this.energy;
+        return  name + " --- " + artist + " ---- " + this.energy;
     }
 
 }

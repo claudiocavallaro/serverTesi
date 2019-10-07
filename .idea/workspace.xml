@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09fc46a1-c3d5-44b0-9f06-7799f0c58438" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dbtott.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/test.arff" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/test.arff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/RestComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/api/TracceComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/configuration/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/ApiKeys.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Camera.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/PhonePreference.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Power.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Preference.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Read.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/Traccia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/CameraRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/PhonePrefRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/PowerRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/PreferenceRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/TracciaRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/UserRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/unisa/tesi/persistence/UserSeeder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="251" selection-start-line="251" selection-end-line="252" selection-end-column="53" />
+            <state relative-caret-position="401">
+              <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,13 +39,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PhonePreference.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/TracceComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="540">
+              <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -75,10 +66,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java">
+        <entry file="file://$PROJECT_DIR$/dbtott.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+            <state relative-caret-position="355">
+              <caret line="24" column="35" selection-end-line="310" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="75" selection-start-line="75" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="468">
+              <caret line="79" column="20" selection-start-line="75" selection-end-line="84" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="-38910">
               <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
@@ -110,36 +110,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+            <state relative-caret-position="465">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#456#457#0" expanded="true" />
                 <element signature="e#484#485#0" expanded="true" />
                 <element signature="e#550#551#0" expanded="true" />
                 <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#911#912#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -147,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="495">
+              <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -185,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/configuration/GymRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/configuration/DbSeeder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Gym.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/persistence/UserSeeder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/persistence/PhonePrefRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/ApiKeys.java" />
@@ -195,14 +177,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/TracceComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Power.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/Ml.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PhonePreference.java" />
+        <option value="$PROJECT_DIR$/dbtott.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java" />
       </list>
     </option>
@@ -224,8 +208,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,23 +304,26 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/unisa/tesi" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/unisa/tesi/api" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/unisa/tesi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -512,14 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569335316498</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="...">
+      <created>1569449779682</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1569449779682</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49926144" visible="true" weight="0.2662407" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49926144" visible="true" weight="0.29392973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -638,16 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -675,43 +657,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/tempo.arff">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/test.arff">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/TracceComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="59" column="40" selection-start-line="53" selection-start-column="16" selection-end-line="68" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PhonePreference.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,17 +683,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38910">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -747,40 +724,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PhonePreference.java">
+    <entry file="file://$PROJECT_DIR$/dbtott.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="355">
+          <caret line="24" column="35" selection-end-line="310" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/PreferenceML.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Traccia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/model/Preference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/TracceComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/RestComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="251" selection-start-line="251" selection-end-line="252" selection-end-column="53" />
+        <state relative-caret-position="401">
+          <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/InitComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unisa/tesi/api/MachineLearning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="75" selection-start-line="75" selection-end-line="80" selection-end-column="9" />
+        <state relative-caret-position="468">
+          <caret line="79" column="20" selection-start-line="75" selection-end-line="84" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

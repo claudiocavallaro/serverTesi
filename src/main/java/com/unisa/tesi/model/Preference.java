@@ -1,7 +1,6 @@
 package com.unisa.tesi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.unisa.tesi.api.TracceComponent;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
