@@ -233,7 +233,7 @@ public class RestComponent {
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
         //Si sceglie una caratteristica
-        String car = "danceability";
+        String car = "energy";
         //Si crea il testset file
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("dataset/test.arff"));
@@ -246,6 +246,11 @@ public class RestComponent {
 
         //SAVE ON DB
         this.powerRepo.save(powerObj);
+
+        int powerInt = Integer.valueOf(power);
+        if (powerInt < 70){
+            InitComponent.restartList();
+        }
 
         //PERFORM ML
         if (MachineLearning.isInPlay() != true){

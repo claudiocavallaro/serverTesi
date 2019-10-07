@@ -17,6 +17,15 @@ public class InitComponent {
     private static ArrayList<PreferenceML> lista = new ArrayList<>();
 
     private static ArrayList<Traccia> musicList = new ArrayList<>();
+    private static ArrayList<Traccia> playedSong = new ArrayList<>();
+
+    public static ArrayList<Traccia> getPlayedSong() {
+        return playedSong;
+    }
+
+    public static void setPlayedSong(ArrayList<Traccia> playedSong) {
+        InitComponent.playedSong = playedSong;
+    }
 
     public static ArrayList<PreferenceML> getLista() {
         return lista;
@@ -42,6 +51,17 @@ public class InitComponent {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void restartList(){
+        Gson gson = new Gson();
+        playedSong = new ArrayList<>();
+        try{
+            musicList = gson.fromJson(new FileReader("dbtott.json"), new TypeToken<List<Traccia>>(){}.getType());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 }

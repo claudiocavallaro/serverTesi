@@ -1,5 +1,6 @@
 package com.unisa.tesi.api;
 
+import com.sun.org.apache.xml.internal.security.Init;
 import com.unisa.tesi.model.Power;
 import com.unisa.tesi.model.PreferenceML;
 import com.unisa.tesi.model.Traccia;
@@ -73,6 +74,9 @@ public class MachineLearning {
 
     private void findSongFromDb(double predicted, String car) {
         ArrayList<Traccia> lista = InitComponent.getMusicList();
+        ArrayList<Traccia> playedSong = InitComponent.getPlayedSong();
+
+        System.out.println(playedSong.toString());
         double min = predicted - 0;
         Traccia t = null;
         for (Traccia traccia : lista){
@@ -83,6 +87,8 @@ public class MachineLearning {
                 t = traccia;
             }
         }
+        playedSong.add(t);
+        lista.remove(t);
         playSong(t);
     }
 
@@ -97,7 +103,7 @@ public class MachineLearning {
 
         try{
             //Thread.sleep(traccia.getDuration());
-            Thread.sleep(10000);
+            Thread.sleep(25000);
             inPlay = false;
         } catch (Exception e){
             e.printStackTrace();

@@ -56,7 +56,7 @@ public class Traccia {
     }
 
     public String toString(){
-        return  name + " --- " + artist + " ---- " + this.energy;
+        return  name + " --- " + artist + "\n";
     }
 
 }

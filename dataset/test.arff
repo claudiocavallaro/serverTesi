@@ -1,6 +1,6 @@
-@relation danceability
+@relation energy
 @attribute POWER numeric
 @attribute CAR numeric
 
 @data
-524,?
+537,?
