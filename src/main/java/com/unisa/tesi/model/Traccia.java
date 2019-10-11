@@ -7,9 +7,11 @@ import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
+
 @Data
 @Document(collection = "tracce")
-public class Traccia {
+public class Traccia implements Serializable {
 
     @Id
     private String id;
@@ -56,7 +58,8 @@ public class Traccia {
     }
 
     public String toString(){
-        return  name + " --- " + artist + "\n";
+        return  name + " --- " + artist + "---" + danceability +
+                "---- " + valence + "\n";
     }
 
 }

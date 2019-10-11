@@ -253,10 +253,16 @@ public class RestComponent {
         }
 
         //PERFORM ML
-        if (MachineLearning.isInPlay() != true){
-            MachineLearning machineLearning = new MachineLearning();
-            machineLearning.performML(powerObj, car);
+        //if (MachineLearning.isInPlay() != true){
+         //   MachineLearning machineLearning = new MachineLearning();
+         //   machineLearning.performML(powerObj, car);
+        //}
+
+        if (MachineLearning2.isInPlay() != true){
+            MachineLearning2 machineLearning2 = new MachineLearning2();
+            machineLearning2.performML(powerObj);
         }
+
 
         return gson.toJson(powerObj);
     }
