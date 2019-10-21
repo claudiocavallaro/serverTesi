@@ -21,8 +21,6 @@ public class MachineLearning2 {
     private ArrayList<Traccia> lista = InitComponent.getMusicList();
     private ArrayList<Traccia> orderByDance= InitComponent.getMusicList();
 
-    private ArrayList<Traccia> orderByValence= InitComponent.getMusicList();
-
     public static boolean isInPlay() {
         return inPlay;
     }
@@ -39,18 +37,6 @@ public class MachineLearning2 {
                 if (o1.getDanceability() == o2.getDanceability()){
                     return 0;
                 } else if (o1.getDanceability() > o2.getDanceability()){
-                    return 1;
-                }
-                return -1;
-            }
-        });
-
-        Collections.sort(orderByValence, new Comparator<Traccia>() {
-            @Override
-            public int compare(Traccia o1, Traccia o2) {
-                if (o1.getValence() == o2.getValence()){
-                    return 0;
-                } else if (o1.getValence() > o2.getValence()){
                     return 1;
                 }
                 return -1;
@@ -90,10 +76,13 @@ public class MachineLearning2 {
             for (Prediction prediction : eval.predictions()){
                 predicted.setValence((float) prediction.predicted());
             }
-
+            System.out.println("Predicted values:");
             System.out.println(predicted);
             Traccia t = findSong(predicted);
+            System.out.println("Song found");
             System.out.println(t);
+
+            playSong(t);
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -101,6 +90,7 @@ public class MachineLearning2 {
 
     private Traccia findSong(Predicted predicted) {
         Traccia t = orderByDance.get(0);
+        ArrayList<Traccia> playedSong = InitComponent.getPlayedSong();
         Predicted first = new Predicted(orderByDance.get(0).getDanceability(), orderByDance.get(0).getValence());
         double min = distanceM(predicted, first);
         for (Traccia traccia : orderByDance){
@@ -111,7 +101,8 @@ public class MachineLearning2 {
                 t = traccia;
             }
         }
-
+        playedSong.add(t);
+        lista.remove(t);
         return t;
     }
 
@@ -121,9 +112,9 @@ public class MachineLearning2 {
         return result;
     }
 
-        private void playSong(Traccia traccia) {
+    private void playSong(Traccia traccia) {
         inPlay = true;
-        String[] args = new String[]{"/bin/bash", "-c", "spotify play " + traccia.getUrl()};
+        String[] args = new String[]{"/bin/zsh", "-c", "spotify play " + traccia.getUrl()};
         try {
             Process proc = new ProcessBuilder(args).start();
         } catch (Exception e) {
@@ -131,8 +122,7 @@ public class MachineLearning2 {
         }
 
         try{
-            //Thread.sleep(traccia.getDuration());
-            Thread.sleep(25000);
+            Thread.sleep(traccia.getDuration());
             inPlay = false;
         } catch (Exception e){
             e.printStackTrace();

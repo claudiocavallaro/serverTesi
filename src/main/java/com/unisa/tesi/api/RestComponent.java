@@ -229,7 +229,7 @@ public class RestComponent {
     @ResponseBody
     public String getPower(@RequestParam String voltage, String current, String power){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        System.out.println("Voltage " + voltage + " current " + current + " power " + power);
+        System.out.println("Sensor Value : Voltage " + voltage + " current " + current + " power " + power);
         Power powerObj = new Power(Integer.valueOf(voltage), Double.valueOf(current), Integer.valueOf(power));
 
         //Si sceglie una caratteristica

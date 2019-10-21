@@ -58,8 +58,8 @@ public class Traccia implements Serializable {
     }
 
     public String toString(){
-        return  name + " --- " + artist + "---" + danceability +
-                "---- " + valence + "\n";
+        return  "=============\n" + name + "\n" + artist + "\nDanceability: " + danceability +
+                "\nValence: " + valence + "\n=============\n";
     }
 
 }

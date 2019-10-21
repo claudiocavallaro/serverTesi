@@ -29,6 +29,6 @@ public class Predicted {
     }
 
     public String toString(){
-        return "Dance " + danceability + " Valence " + valence + "\n";
+        return "Danceability: " + danceability + " Valence: " + valence ;
     }
 }
