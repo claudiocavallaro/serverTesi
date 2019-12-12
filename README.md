@@ -7,3 +7,8 @@ It's a machine learning project that suggests the right background music depends
 The server runs a SpringBoot application that receive data from user that give preference to a certain music track, from sensors and contain the machine learning logic.
 
 ![alt txt](flowserver.png)
+
+Technologies involved:
+- SpringBoot
+- WeKa machine learning
+- MongoDB
